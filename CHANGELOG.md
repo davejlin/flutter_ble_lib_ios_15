@@ -1,3 +1,7 @@
+## 2.4.2
+
+* Change meta version to 1.3.0
+
 ## 2.4.1
 
 * Use MultiplatformBleAdapter v0.1.9
