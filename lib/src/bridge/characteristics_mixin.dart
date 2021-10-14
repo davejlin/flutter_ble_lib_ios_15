@@ -296,7 +296,7 @@ mixin CharacteristicsMixin on FlutterBLE {
     Map<String, dynamic> rootObject = jsonDecode(rawJsonValue);
     Service service = Service.fromJson(rootObject, peripheral, _manager);
 
-    var transactionId = rootObject["transactionId"];
+    var transactionId = rootObject["transactionId"] ?? '0';
     return CharacteristicWithValueAndTransactionId.fromJson(
             rootObject["characteristic"], service, _manager)
         .setTransactionId(transactionId);

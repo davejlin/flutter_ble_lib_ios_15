@@ -1,3 +1,7 @@
+## 2.4.3
+
+* Assign transactionId a default value when rootObject["transactionId"] is null
+
 ## 2.4.2
 
 * Change meta version to 1.3.0
