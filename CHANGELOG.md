@@ -1,3 +1,8 @@
+## 2.5.0
+
+* Update library to support Android V2 embedding
+* Update example app to Android V2 embedding
+
 ## 2.4.3
 
 * Assign transactionId a default value when rootObject["transactionId"] is null
