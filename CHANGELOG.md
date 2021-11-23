@@ -1,3 +1,7 @@
+## 2.5.1
+
+* Update Android compileSdkVersion to 31
+
 ## 2.5.0
 
 * Update library to support Android V2 embedding
