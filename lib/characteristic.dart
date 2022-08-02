@@ -54,6 +54,16 @@ class Characteristic extends InternalCharacteristic {
         isIndicatable = jsonObject[_CharacteristicMetadata.isIndicatable],
         super(jsonObject[_CharacteristicMetadata.id]);
 
+  static Characteristic fromJsonMaybeWithValue(Map<String, dynamic> jsonObject,
+      Service service, ManagerForCharacteristic manager) {
+    final hasValue = jsonObject[_CharacteristicMetadata.value] != null;
+    if (hasValue) {
+      return CharacteristicWithValue.fromJson(jsonObject, service, manager);
+    } else {
+      return Characteristic.fromJson(jsonObject, service, manager);
+    }
+  }
+
   /// Reads the value of this characteristic.
   ///
   /// The value can be read only if [isReadable] is `true`.

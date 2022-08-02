@@ -307,7 +307,7 @@ mixin CharacteristicsMixin on FlutterBLE {
     Map<String, dynamic> rootObject = jsonDecode(rawJsonValue);
     Service service = Service.fromJson(rootObject, peripheral, _manager);
 
-    return Characteristic.fromJson(
+    return Characteristic.fromJsonMaybeWithValue(
         rootObject["characteristic"], service, _manager);
   }
 
