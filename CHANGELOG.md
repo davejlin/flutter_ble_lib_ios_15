@@ -1,3 +1,7 @@
+## 2.6.0
+
+* Upgraded MultiPlatformBleAdapter dependency to a fork to support Android 12 and above
+
 ## 2.5.2
 
 * Revert Android compileSdkVersion back to 30 as temporary fix for Android 12 incompatibilities

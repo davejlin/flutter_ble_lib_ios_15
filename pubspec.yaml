@@ -1,6 +1,6 @@
 name: flutter_ble_lib_ios_15
 description: FlutterBle Library is a flutter library that supports BLE operations. It uses MultiPlatformBleAdapter as a native backend. Forked from https://github.com/Polidea/FlutterBleLib to support iOS 15.
-version: 2.5.2
+version: 2.6.0
 homepage: https://github.com/davejlin/flutter_ble_lib_ios_15
 
 environment:
