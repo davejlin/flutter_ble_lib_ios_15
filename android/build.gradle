@@ -1,26 +1,27 @@
 group 'com.polidea.flutter_ble_lib'
-version '2.3.2'
+version '2.6.0'
 
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:3.5.4'
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         maven { url "https://jitpack.io" }
     }
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'idea'
 
 android {
     compileSdkVersion 30
@@ -35,6 +36,6 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.annotation:annotation:1.1.0'
-    implementation 'com.github.Polidea:MultiPlatformBleAdapter:0.1.8'
+    implementation 'androidx.annotation:annotation:1.6.0'
+    implementation 'com.github.MY01Inc:MultiPlatformBleAdapter:73f8ea5fdf'
 }
