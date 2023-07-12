@@ -14,15 +14,14 @@ The main change is to specify version 0.1.9 for the dependency MultiplatformBleA
   s.dependency 'MultiplatformBleAdapter', '~> 0.1.9'
 ```
 
-In your Flutter project, specify the following in ```.../ios/Podfile``` to point to the forked MultiplatformBleAdapter repo to use the correct version:
+Furthermore, to resolve some issues surrounding newer Android versions, the MultiPlatformBleAdapter dependency for 
+Android has been updated to use [this fork](https://github.com/MY01Inc/MultiPlatformBleAdapter/tree/main). This 
+repository was chosen after considering a number of forks, as it is relatively up-to-date, fixes the issues with newer 
+Android versions, and has a working build on [JitPack](https://jitpack.io/#MY01Inc/MultiPlatformBleAdapter). This
+resulted in the following dependency change:
 
 ```
-target 'Runner' do
-  use_frameworks!
-  use_modular_headers!
-  pod 'MultiplatformBleAdapter', :git => 'https://github.com/below/MultiPlatformBleAdapter', :tag => '0.1.9'
-  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
-end
+implementation 'com.github.MY01Inc:MultiPlatformBleAdapter:73f8ea5fdf'
 ```
 
 To be consistent with the parent project, versioning in this fork begins at ```2.4.1```
@@ -30,7 +29,7 @@ To be consistent with the parent project, versioning in this fork begins at ```2
 # FlutterBleLib
 
 A library for all your Bluetooth Low Energy needs in Flutter. Internally utilises Polidea's
-[MultiPlatformBleAdapter](https://github.com/Polidea/MultiPlatformBleAdapter),
+[MultiPlatformBleAdapter](https://github.com/Polidea/MultiPlatformBleAdapter) for iOS and MY01Inc's [MultiPlatformBleAdapter](https://github.com/MY01Inc/MultiPlatformBleAdapter/tree/main) for Android,
 which runs on [RxAndroidBle](https://github.com/Polidea/RxAndroidBle)
 and [RxBluetoothKit](https://github.com/Polidea/RxBluetoothKit).
 
@@ -41,16 +40,16 @@ The simulation allows one to develop without physical smartphone or BLE peripher
 
 ## Installation
 
-To use this plugin, add `flutter_ble_lib` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/packages-and-plugins/using-packages).
+To use this plugin, add `flutter_ble_lib_ios_15` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/packages-and-plugins/using-packages).
 
 ### Android
 
-Set `minSDKVersion` in `[project]/android/app/build.gradle` file to 18.
+Set `minSDKVersion` in `[project]/android/app/build.gradle` file to 21.
 
 ```gradle
 defaultConfig {
   ...
-  minSdkVersion 18
+  minSdkVersion 21
   ...
 }
 ```
